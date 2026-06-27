@@ -31,7 +31,7 @@ Action Space: 4,672-dim vector encoding Queen moves (8 directions × 7 distances
 1. Installation
 
 bash
-git clone https://github.com/YOUR_USERNAME/AlphaZero-Chess.git
+git clone https://github.com/ManikStudentLearner/AlphaZero-Chess/
 cd AlphaZero-Chess
 pip install -r requirements.txt
 
