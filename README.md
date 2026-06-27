@@ -18,10 +18,7 @@ A Residual Convolutional Network takes the 18-channel board state as input and o
 Policy Head: A probability distribution over 4,672 possible moves (predicting which move to make).
 Value Head: A scalar in [-1, 1] (predicting who is winning from the current player's perspective).
 2. Monte Carlo Tree Search (The Calculation)
-MCTS uses the neural network's predictions to guide its search. It balances exploration and exploitation using the Upper Confidence Bound (UCB) formula:
-
-UCB(s, a) = -Q(s, a) + c_{puct} \cdot P(a|s) \cdot \frac{\sqrt{N(s)}}{1 + N(s, a)}
-Where Q is the action-value, P is the prior probability from the policy head, N is the visit count, and c_puct is the exploration constant.
+MCTS uses the neural network's predictions to guide its search. It balances exploration and exploitation using the Upper Confidence Bound (UCB) formula
 
 3. Board & Move Encoding
 State Space: 18×8×8 tensor encoding piece positions (from the current player's perspective), castling rights, en passant squares, and side-to-move.
