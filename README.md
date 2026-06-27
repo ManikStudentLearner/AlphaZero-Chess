@@ -66,3 +66,5 @@ NumPy: High-performance tensor operations for board encoding.
 Tkinter: Built-in Python GUI framework for interactive play and live training observation.
 text
 
+
+Ps:- I have used ai to write this description for me cuz i cba to write all of this lowkey
