@@ -146,6 +146,7 @@ class ReplayBuffer:
 
 
 def import_human_games(buffer: ReplayBuffer) -> int:
+    """Loads games played by humans from the human_data/ folder into the buffer."""
     if not os.path.exists("human_data"):
         return 0
         
@@ -165,11 +166,15 @@ def import_human_games(buffer: ReplayBuffer) -> int:
             buffer.add(states[i], policies[i], values[i])
             count += 1
             
+        # ─── FIX: Close the file before deleting! ──────────
+        data.close()
+        # ────────────────────────────────────────────────────
+            
+        # Delete the file so we don't train on it again next iteration
         os.remove(filepath)
         
     print(f"  ✓ Imported {count} positions from {len(files)} human games.")
     return count
-
 
 def self_play_game(model: AlphaZeroNet, mcts: MCTS, game_num: int, gui: TrainObserverGUI) -> list[tuple]:
     board = chess.Board()
